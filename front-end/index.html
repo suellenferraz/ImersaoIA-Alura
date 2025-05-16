@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GabirIA | Enem</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+    <link rel="manifest" href="img/site.webmanifest">
+    <link rel="shortcut icon" href="img/favicon.ico">
+    <meta name="msapplication-TileColor" content="#6366f1">
+    <meta name="theme-color" content="#111827">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="antialiased">
+
+    <nav class="navbar">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="flex items-center text-2xl font-bold gradient-text">
+                <img src="img/logo.png" alt="GabirIA Logo" class="h-8 w-auto mr-2">
+                GabirIA
+            </a>
+            <div class="hidden md:flex space-x-6 items-center">
+                <a href="#materias" class="nav-link">Matérias</a>
+                <a href="#simulados" class="nav-link">Simulados</a>
+                <a href="#planos" class="nav-link">Planos de Estudo</a>
+                <!-- <a href="#sobre" class="nav-link">Sobre</a> -->
+                <a href="enem_chatbot_html.html" class="nav-link-special">Usar Chatbot</a>
+            </div>
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-gray-300 hover:text-white focus:outline-none">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+        <div id="mobile-menu" class="md:hidden hidden"> <!-- Removed bg-gray-900/80 -->
+            <a href="#materias" class="block py-2 px-4 text-sm nav-link">Matérias</a>
+            <a href="#simulados" class="block py-2 px-4 text-sm nav-link">Simulados</a>
+            <a href="#planos" class="block py-2 px-4 text-sm nav-link">Planos de Estudo</a>
+            <!-- <a href="#sobre" class="block py-2 px-4 text-sm nav-link">Sobre</a> -->
+            <a href="enem_chatbot_html.html" class="block py-3 px-4 text-sm font-semibold text-white text-center rounded-lg m-2 cta-button-primary">Usar Chatbot</a>
+        </div>
+    </nav>
+
+    <header class="min-h-screen flex flex-col justify-center items-center text-center pt-20 px-4 md:px-6 relative">
+        <h1 class="text-5xl md:text-7xl font-extrabold mb-6 fade-in-up">
+            <span id="typewriter-text"></span><span class="gradient-text">.</span>
+        </h1>
+        <p class="text-xl md:text-2xl text-gray-300 mb-10 max-w-3xl fade-in-up delay-1">
+            Sua jornada para a aprovação começa aqui. GabirIA é a inteligência artificial que descomplica seus estudos, oferecendo um caminho personalizado e gratuito para o sucesso no ENEM.
+        </p>
+        <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-6 mb-12 fade-in-up delay-2">
+            <a href="enem_chatbot_html.html" 
+               class="cta-button-primary text-white font-semibold py-3 px-8 rounded-lg text-lg shadow-lg">
+                Começar Agora
+            </a>
+            <a href="#recursos" 
+               class="cta-button-secondary font-semibold py-3 px-8 rounded-lg text-lg">
+                Explorar Recursos
+            </a>
+        </div>
+    </header>
+
+    <section id="recursos" class="py-16 sm:py-24 bg-gray-800">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4 gradient-text scroll-animated-item">Recursos para o seu Sucesso</h2>
+            <p class="text-lg text-gray-400 mb-12 max-w-2xl mx-auto scroll-animated-item">Oferecemos uma variedade de ferramentas para otimizar os seus estudos.</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="gradient-border-card p-8 rounded-xl shadow-xl transform hover:scale-105 transition-transform duration-300 scroll-animated-item">
+                    <div class="text-4xl mb-4 text-indigo-300"><i class="fas fa-question-circle"></i></div>
+                    <h3 class="text-2xl font-semibold mb-2 text-white">Chatbot Inteligente</h3>
+                    <p class="text-gray-200">Tire dúvidas 24/7 com o nosso assistente virtual baseado em IA.</p>
+                </div>
+                <div class="gradient-border-card p-8 rounded-xl shadow-xl transform hover:scale-105 transition-transform duration-300 scroll-animated-item">
+                    <div class="text-4xl mb-4 text-purple-300"><i class="fas fa-file-alt"></i></div>
+                    <h3 class="text-2xl font-semibold mb-2 text-white">Simulados Completos</h3>
+                    <p class="text-gray-200">Teste os seus conhecimentos com provas no formato do ENEM.</p>
+                </div>
+                <div class="gradient-border-card p-8 rounded-xl shadow-xl transform hover:scale-105 transition-transform duration-300 scroll-animated-item">
+                    <div class="text-4xl mb-4 text-sky-300"><i class="fas fa-calendar-alt"></i></div>
+                    <h3 class="text-2xl font-semibold mb-2 text-white">Planos de Estudo</h3>
+                    <p class="text-gray-200">Organize a sua rotina com planos personalizados e adaptáveis.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="sobre" class="pt-16 pb-8 sm:pt-24 sm:pb-12">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4 gradient-text scroll-animated-item">Sobre o GabirIA</h2>
+            <p class="text-lg text-gray-400 mb-8 max-w-2xl mx-auto scroll-animated-item">
+                O GabirIA nasceu de um sonho: democratizar o acesso à preparação de qualidade para o ENEM. Sabemos que muitos estudantes talentosos enfrentam barreiras financeiras para acessar plataformas de estudo. Por isso, criamos uma solução inovadora, utilizando o poder da Inteligência Artificial para oferecer ferramentas de aprendizado, simulados e suporte personalizado, tudo de forma 100% gratuita. Nossa missão é nivelar o campo de jogo, capacitando cada estudante a alcançar seu potencial máximo e conquistar a vaga dos sonhos, independentemente de sua condição financeira. Com o GabirIA, o futuro está ao seu alcance!
+            </p>
+        </div>
+    </section>
+    
+    <footer class="bg-gray-800 py-12">
+        <div class="container mx-auto px-6 text-center text-gray-400">
+            <p>&copy; 2025 GabirIA - Todos os direitos reservados.</p>
+            <p class="text-sm mt-2">Criado para ajudar você a conquistar a sua vaga!</p>
+            <div class="mt-4 space-x-6">
+                <a href="#" class="hover:text-indigo-400 text-xl" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="#" class="hover:text-indigo-400 text-xl" aria-label="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js" defer></script>
+</body>
+</html>
