@@ -48,8 +48,6 @@ O GabirIA é um assistente de estudos inteligente projetado para auxiliar estuda
 
     *   Abra o arquivo `front-end/index.html` no seu navegador.
 
-## Estrutura do Projeto
-
 ## Contribuições
 
 Contribuições são sempre bem-vindas! Sinta-se à vontade para abrir issues e enviar pull requests.
