@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GabirIA | Enem</title>
-    <!-- Favicons -->
     <link rel="apple-touch-icon" sizes="180x180" href="../img/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="../img/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="../img/favicon-16x16.png">
@@ -12,15 +11,12 @@
     <link rel="shortcut icon" href="../img/favicon.ico">
     <meta name="msapplication-TileColor" content="#6366f1">
     <meta name="theme-color" content="#111827">
-    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <!-- Custom Styles -->
-    <link rel="stylesheet" href="../style.css"> <!-- Estilos globais -->
-    <link rel="stylesheet" href="../css/chatbot.css"> <!-- Estilos específicos do chatbot -->
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../css/chatbot.css">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </head>
 <body class="antialiased flex flex-col min-h-screen overflow-hidden">
 
@@ -41,7 +37,6 @@
 
     <main id="main-content" class="flex-grow flex">
         
-        <!-- Coluna da Esquerda: Sidebar -->
         <aside id="chat-sidebar" class="chat-sidebar">
             <div class="sidebar-header">
             </div>
@@ -60,7 +55,6 @@
             </div>
         </aside>
 
-        <!-- Coluna da Direita: Área do Chat -->
         <section class="chat-area flex-grow flex flex-col">
             <div class="chat-container flex-grow"> 
                 <div class="chat-messages" id="chat-messages">
@@ -76,6 +70,8 @@
         </section>
 
     </main>
-    <script src="../scripts/chatbot.js" defer></script>
+
+    <script src="../scripts/gemini-api.js"></script>
+    <script src="../scripts/chatbot.js"></script>
 </body>
 </html>

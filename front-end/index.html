@@ -25,10 +25,9 @@
                 GabirIA
             </a>
             <div class="hidden md:flex space-x-6 items-center">
-                <a href="#materias" class="nav-link">Matérias</a>
-                <a href="#simulados" class="nav-link">Simulados</a>
-                <a href="#planos" class="nav-link">Planos de Estudo</a>
-                <!-- <a href="#sobre" class="nav-link">Sobre</a> -->
+                <a href="pages/materias.html" class="nav-link">Matérias</a>
+                <a href="pages/simulados.html" class="nav-link">Simulados</a>
+                <a href="pages/plano-estudos.html" class="nav-link">Planos de Estudo</a>
                 <a href="pages/chatbot.html" class="nav-link-special">Usar Chatbot</a>
             </div>
             <div class="md:hidden">
@@ -37,12 +36,13 @@
                 </button>
             </div>
         </div>
-        <div id="mobile-menu" class="md:hidden hidden"> <!-- Removed bg-gray-900/80 -->
-            <a href="#materias" class="block py-2 px-4 text-sm nav-link">Matérias</a>
-            <a href="#simulados" class="block py-2 px-4 text-sm nav-link">Simulados</a>
-            <a href="#planos" class="block py-2 px-4 text-sm nav-link">Planos de Estudo</a>
-            <!-- <a href="#sobre" class="block py-2 px-4 text-sm nav-link">Sobre</a> -->
-            <a href="pages/chatbot.html" class="block py-3 px-4 text-sm font-semibold text-white text-center rounded-lg m-2 cta-button-primary">Usar Chatbot</a>
+        <div id="mobile-menu" class="md:hidden hidden">
+            <div class="mobile-menu-scroll-wrapper pt-4 pb-3 space-y-1">
+                <a href="pages/materias.html" class="block py-2 px-4 text-base nav-link">Matérias</a>
+                <a href="pages/simulados.html" class="block py-2 px-4 text-base nav-link">Simulados</a>
+                <a href="pages/plano-estudos.html" class="block py-2 px-4 text-base nav-link">Planos de Estudo</a>
+                <a href="pages/chatbot.html" class="block mt-2 py-3 px-4 text-base font-semibold text-white text-center rounded-lg mx-2 cta-button-primary">Usar Chatbot</a>
+            </div>
         </div>
     </nav>
 
@@ -70,21 +70,24 @@
             <h2 class="text-3xl md:text-4xl font-bold mb-4 gradient-text scroll-animated-item">Recursos para o seu Sucesso</h2>
             <p class="text-lg text-gray-400 mb-12 max-w-2xl mx-auto scroll-animated-item">Oferecemos uma variedade de ferramentas para otimizar os seus estudos.</p>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="gradient-border-card p-8 rounded-xl shadow-xl transform hover:scale-105 transition-transform duration-300 scroll-animated-item">
+                <!-- Card Chatbot Inteligente -->
+                <a href="pages/chatbot.html" class="block gradient-border-card p-8 rounded-xl shadow-xl transform hover:scale-105 transition-transform duration-300 scroll-animated-item no-underline hover:no-underline focus:no-underline">
                     <div class="text-4xl mb-4 text-indigo-300"><i class="fas fa-question-circle"></i></div>
                     <h3 class="text-2xl font-semibold mb-2 text-white">Chatbot Inteligente</h3>
                     <p class="text-gray-200">Tire dúvidas 24/7 com o nosso assistente virtual baseado em IA.</p>
-                </div>
-                <div class="gradient-border-card p-8 rounded-xl shadow-xl transform hover:scale-105 transition-transform duration-300 scroll-animated-item">
+                </a>
+                <!-- Card Simulados Completos -->
+                <a href="pages/simulados.html" class="block gradient-border-card p-8 rounded-xl shadow-xl transform hover:scale-105 transition-transform duration-300 scroll-animated-item no-underline hover:no-underline focus:no-underline">
                     <div class="text-4xl mb-4 text-purple-300"><i class="fas fa-file-alt"></i></div>
                     <h3 class="text-2xl font-semibold mb-2 text-white">Simulados Completos</h3>
                     <p class="text-gray-200">Teste os seus conhecimentos com provas no formato do ENEM.</p>
-                </div>
-                <div class="gradient-border-card p-8 rounded-xl shadow-xl transform hover:scale-105 transition-transform duration-300 scroll-animated-item">
+                </a>
+                <!-- Card Planos de Estudo -->
+                <a href="pages/plano-estudos.html" class="block gradient-border-card p-8 rounded-xl shadow-xl transform hover:scale-105 transition-transform duration-300 scroll-animated-item no-underline hover:no-underline focus:no-underline">
                     <div class="text-4xl mb-4 text-sky-300"><i class="fas fa-calendar-alt"></i></div>
                     <h3 class="text-2xl font-semibold mb-2 text-white">Planos de Estudo</h3>
                     <p class="text-gray-200">Organize a sua rotina com planos personalizados e adaptáveis.</p>
-                </div>
+                </a>
             </div>
         </div>
     </section>

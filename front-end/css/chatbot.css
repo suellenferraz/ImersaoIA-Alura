@@ -1,293 +1,358 @@
 html, body {
     height: 100%;
-    overflow: hidden; /* Previne scroll no body */
+    overflow: hidden;
 }
 
 body {
     display: flex;
     flex-direction: column;
-    background-color: #0d1117; /* Um fundo bem escuro para o corpo, similar ao GitHub/VSCode */
+    background-color: #0d1117;
 }
 
 .navbar {
     flex-shrink: 0;
-    background-color: #161b22; /* Cor de fundo da navbar um pouco diferente */
-    border-bottom: 1px solid #30363d; /* Borda sutil */
-    /* position: fixed; width: 100%; top: 0; z-index: 50; is in style.css */
+    background-color: #161b22;
+    border-bottom: 1px solid #30363d;
 }
 
 main {
     flex-grow: 1;
-    display: flex; /* Para as colunas sidebar e chat-area */
-    overflow: hidden; /* Para conter o layout */
-    padding-top: 3.5rem; /* ADICIONADO: Ajuste este valor para a altura exata da sua navbar (e.g., 56px or 3.5rem) */
+    display: flex;
+    overflow: hidden;
+    padding-top: 3.5rem;
 }
 
-/* --- Sidebar --- */
 .chat-sidebar {
-    width: 260px; /* Largura da sidebar */
-    background-color: #161b22; /* Cor de fundo da sidebar, igual navbar */
-    border-right: 1px solid #30363d; /* Borda sutil */
+    width: 260px;
+    background-color: #161b22;
+    border-right: 1px solid #30363d;
     display: flex;
     flex-direction: column;
-    /* padding: 1rem 0; */ /* Removido para controle mais fino */
-    transition: width 0.3s ease-in-out, padding 0.3s ease-in-out, border-width 0.3s ease-in-out, transform 0.3s ease-in-out; /* Adicionada transição para width */
-    z-index: 40; /* Abaixo da navbar se sobrepor, relevante se navbar não fosse fixed ou para outros contextos */
-    overflow-x: hidden; /* Para esconder conteúdo ao encolher */
-    /* Para desktop, a altura será determinada pelo flex container 'main' */
+    transition: width 0.3s ease-in-out, padding 0.3s ease-in-out, border-width 0.3s ease-in-out, transform 0.3s ease-in-out;
+    z-index: 40;
+    overflow-x: hidden;
 }
 
 .sidebar-header {
-    padding: 0 1rem 1rem 1rem; /* Espaçamento para o topo da sidebar */
-    /* Estilos para logo/título da sidebar aqui, se houver */
+    padding: 0 1rem 1rem 1rem;
 }
 
 .sidebar-actions {
-    padding: 0 0.75rem; /* Padding para os botões de ação */
+    padding: 0 0.75rem;
     display: flex;
     flex-direction: column;
-    gap: 0.5rem; /* Espaço entre botões */
+    gap: 0.5rem;
 }
 
 .sidebar-button {
     display: flex;
     align-items: center;
     padding: 0.65rem 0.75rem;
-    border-radius: 0.375rem; /* rounded-md */
-    color: #c9d1d9; /* Cor do texto */
-    font-size: 0.875rem; /* text-sm */
+    border-radius: 0.375rem;
+    color: #c9d1d9;
+    font-size: 0.875rem;
     font-weight: 500;
     text-decoration: none;
     transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 .sidebar-button:hover {
-    background-color: #21262d; /* Fundo no hover */
+    background-color: #21262d;
     color: #e6edf3;
 }
 
 .sidebar-button i {
-    margin-right: 0.75rem; /* Espaço entre ícone e texto */
-    width: 1.25rem; /* w-5 */
+    margin-right: 0.75rem;
+    width: 1.25rem;
     text-align: center;
 }
 
 .sidebar-history {
-    flex-grow: 1; /* Ocupa o espaço restante */
-    overflow-y: auto; /* Scroll para histórico longo */
+    flex-grow: 1;
+    overflow-y: auto;
     padding: 1rem 0.75rem;
     margin-top: 1rem;
     border-top: 1px solid #30363d;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.sidebar-history::-webkit-scrollbar {
+    display: none;
 }
 
 .sidebar-footer {
     padding: 1rem 0.75rem 0 0.75rem;
     border-top: 1px solid #30363d;
-    margin-top: auto; /* Empurra para baixo se o histórico não preencher */
+    margin-top: auto;
 }
 
-/* Estilos para os filhos da sidebar quando colapsada em desktop */
-.sidebar-collapsed .chat-sidebar .sidebar-header,
-.sidebar-collapsed .chat-sidebar .sidebar-actions,
-.sidebar-collapsed .chat-sidebar .sidebar-history,
-.sidebar-collapsed .chat-sidebar .sidebar-footer {
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.1s ease;
-}
-
-/* --- Chat Area --- */
 .chat-area {
-    flex-grow: 1; /* Ocupa o restante da largura */
+    flex-grow: 1;
     display: flex;
     flex-direction: column;
-    background-color: #0d1117; /* Fundo da área de chat principal */
-    padding: 0; /* Removido padding da section, o chat-container controlará */
+    background-color: #0d1117;
+    padding: 0;
 }
 
 #chatbot-section {
     flex-grow: 1;
     display: flex;
     flex-direction: column;
-    padding-top: 0.5rem; /* Reduzido ainda mais o padding superior da seção */
-    padding-bottom: 0.5rem; /* Reduzido ainda mais o padding inferior da seção */
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
 }
 
 #chatbot-section .container {
     flex-grow: 1;
     display: flex;
     flex-direction: column;
-    max-width: 100%; 
-    padding-left: 0.5rem; 
+    max-width: 100%;
+    padding-left: 0.5rem;
     padding-right: 0.5rem;
 }
 
-/* Estilos específicos para a página do chatbot */
 .chat-container {
-    max-width: 896px; /* Aproximadamente 56rem (Tailwind xl/2xl). ChatGPT/Claude usam larguras contidas. Ajuste conforme preferir (ex: 768px, 960px) */
-    width: 100%; 
-    margin: 0 auto; /* Centraliza o container do chat */
-    background-color: transparent; /* Fundo do chat container agora é transparente, o .chat-area tem a cor */
-    border-radius: 0; /* Sem bordas arredondadas, pois é parte de uma área maior */
-    box-shadow: none; /* Sem sombra, pois é parte de uma área maior */
-    flex-grow: 1; /* ESSENCIAL: Faz o chat container crescer para preencher o espaço */
-    overflow: hidden; 
+    max-width: 896px;
+    width: 100%;
+    margin: 0 auto;
+    background-color: transparent;
+    border-radius: 0;
+    box-shadow: none;
+    flex-grow: 1;
+    overflow: hidden;
     display: flex;
     flex-direction: column;
-    padding: 1rem 1.5rem; /* Padding interno para o conteúdo do chat */
+    padding: 1rem 1.5rem;
 }
 
 .chat-header {
-    padding: 0.5rem 0; /* Padding ajustado, sem fundo/borda aqui */
-    color: #c9d1d9; 
-    text-align: left; /* Alinhamento à esquerda, mais comum em apps */
-    font-size: 1.125rem; /* text-lg */
-    font-weight: 600; /* Medium weight */
+    padding: 0.5rem 0;
+    color: #c9d1d9;
+    text-align: left;
+    font-size: 1.125rem;
+    font-weight: 600;
     margin-bottom: 1rem;
-    flex-shrink: 0; 
+    flex-shrink: 0;
     background-color: transparent;
     border-bottom: none;
 }
 
 .chat-messages {
-    flex-grow: 1; 
-    padding: 0; /* Removido padding, já está no chat-container */
-    overflow-y: auto; 
+    flex-grow: 1;
+    padding: 0;
+    overflow-y: auto;
     display: flex;
     flex-direction: column;
-    gap: 1rem; /* Espaço entre mensagens */
+    gap: 1rem;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.chat-messages::-webkit-scrollbar {
+    display: none;
 }
 
 .message {
-    padding: 0.75rem 1.15rem; 
-    border-radius: 0.75rem; 
-    max-width: 80%; 
-    word-wrap: break-word; 
-    line-height: 1.6; 
-    box-shadow: none; /* Remove sombra individual das mensagens para um look mais flat/integrado */
+    padding: 0.75rem 1.15rem;
+    border-radius: 0.75rem;
+    max-width: 80%;
+    word-wrap: break-word;
+    line-height: 1.6;
+    box-shadow: none;
 }
 
 .message.user {
-    background-color: #2f81f7; /* Cor azul para usuário, similar ao GitHub */
+    background-color: #2f81f7;
     color: white;
-    align-self: flex-end; 
-    border-bottom-right-radius: 0.25rem; 
+    align-self: flex-end;
+    border-bottom-right-radius: 0.25rem;
 }
 
 .message.bot {
-    background-color: #21262d; /* Cor de fundo para bot */
-    color: #c9d1d9; 
-    align-self: flex-start; 
-    border-bottom-left-radius: 0.25rem; 
+    background-color: #21262d;
+    color: #c9d1d9;
+    align-self: flex-start;
+    border-bottom-left-radius: 0.25rem;
+    line-height: 1.6;
+    overflow-wrap: break-word;
+}
+
+.message.bot h1,
+.message.bot h2,
+.message.bot h3 {
+    color: #e6edf3;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.message.bot h1 { font-size: 1.5rem; }
+.message.bot h2 { font-size: 1.25rem; }
+.message.bot h3 { font-size: 1.125rem; }
+
+.message.bot p {
+    margin-bottom: 0.75rem;
+}
+
+.message.bot ul,
+.message.bot ol {
+    margin: 0.5rem 0;
+    padding-left: 1.5rem;
+    color: #c9d1d9;
+}
+
+.message.bot ul { list-style-type: disc; }
+.message.bot ol { list-style-type: decimal; }
+
+.message.bot li {
+    margin-bottom: 0.25rem;
+}
+
+.message.bot a {
+    color: #58a6ff;
+    text-decoration: underline;
+}
+
+.message.bot code {
+    font-family: 'Consolas', 'Monaco', 'Andale Mono', monospace;
+    background-color: #1f2937;
+    padding: 0.2em 0.4em;
+    border-radius: 0.375rem;
+    font-size: 0.875em;
+}
+
+.message.bot pre {
+    background-color: #1f2937;
+    padding: 1rem;
+    margin: 1rem 0;
+    border-radius: 0.375rem;
+    overflow-x: auto;
+}
+
+.message.bot pre code {
+    background-color: transparent;
+    padding: 0;
+    border-radius: 0;
+}
+
+.message.bot blockquote {
+    border-left: 4px solid #30363d;
+    margin: 0.5rem 0;
+    padding: 0.5rem 1rem;
+    color: #8b949e;
+}
+
+.message.bot table {
+    border-collapse: collapse;
+    margin: 1rem 0;
+    width: 100%;
+}
+
+.message.bot th,
+.message.bot td {
+    border: 1px solid #30363d;
+    padding: 0.5rem;
+    text-align: left;
+}
+
+.message.bot th {
+    background-color: #161b22;
 }
 
 .chat-input-area {
     display: flex;
-    align-items: center; /* Alinha itens verticalmente */
-    padding: 1rem 0 0.5rem 0; /* Padding ajustado, principalmente superior */
-    border-top: 1px solid #30363d; /* Linha divisória sutil */
-    background-color: transparent; /* Input area transparente, cor vem do .chat-area */
-    flex-shrink: 0; 
+    align-items: center;
+    padding: 1rem 0 0.5rem 0;
+    border-top: 1px solid #30363d;
+    background-color: transparent;
+    flex-shrink: 0;
     margin-top: 1rem;
 }
 
 .chat-input-area input[type="text"] {
     flex-grow: 1;
-    padding: 0.75rem 1rem; /* Input um pouco maior */
-    border: 1px solid #30363d; 
-    border-radius: 0.375rem; /* rounded-md */
-    background-color: #0d1117; /* Fundo do input mais escuro, contrastando com a área */
+    padding: 0.75rem 1rem;
+    border: 1px solid #30363d;
+    border-radius: 0.375rem;
+    background-color: #0d1117;
     color: #c9d1d9;
-    margin-right: 0.75rem; 
+    margin-right: 0.75rem;
     font-size: 0.9rem;
 }
 
 .chat-input-area input[type="text"]:focus {
     outline: none;
-    border-color: #2f81f7; /* Azul no foco */
-    box-shadow: 0 0 0 3px rgba(47, 129, 247, 0.3); 
+    border-color: #2f81f7;
+    box-shadow: 0 0 0 3px rgba(47, 129, 247, 0.3);
 }
 
 .chat-input-area button {
-    padding: 0.65rem; /* Botão quadrado/circular para ícone */
-    width: 38px; /* Largura fixa */
-    height: 38px; /* Altura fixa */
-    background-color: #238636; /* Verde para enviar, similar ao GitHub */
+    padding: 0.65rem;
+    width: 38px;
+    height: 38px;
+    background-color: #238636;
     color: white;
     border: 1px solid rgba(200, 220, 255, 0.1);
-    border-radius: 0.375rem; /* rounded-md */
+    border-radius: 0.375rem;
     display: flex;
     align-items: center;
     justify-content: center;
     transition: background-color 0.2s ease;
-    box-shadow: none; /* Remove sombra do botão para um look mais flat */
+    box-shadow: none;
 }
 
 .chat-input-area button:hover {
-    background-color: #2da042; /* Cor mais escura no hover */
-    transform: none; /* Remove transform para um look mais estável */
+    background-color: #2da042;
+    transform: none;
     box-shadow: none;
 }
 
 .chat-input-area button i {
-    margin-right: 0; /* Remove margem se o texto "Enviar" for removido */
+    margin-right: 0;
     font-size: 0.9rem;
 }
 
-/* Estilos para Mobile - Esconder sidebar e mostrar botão de toggle */
 @media (max-width: 768px) {
     .chat-sidebar {
         position: absolute;
-        top: 3.5rem; /* ALTERADO: Posição inicial abaixo da navbar (ajuste para altura da navbar) */
+        top: 3.5rem;
         left: 0;
-        bottom: 0; /* ALTERADO: Estica até o final da viewport */
-        width: 260px; /* MANTIDO: Largura da sidebar */
-        transform: translateX(-100%); /* Escondida por padrão */
-        /* margin-top: 3.5rem; */ /* REMOVIDO: 'top' agora controla isso */
-        /* height: calc(100% - 3.5rem); */ /* REMOVIDO: 'top' e 'bottom' controlam a altura */
-        z-index: 45; /* Aumentado para garantir que fique sobre a área de chat no mobile */
+        bottom: 0;
+        width: 260px;
+        transform: translateX(-100%);
+        z-index: 45;
     }
     .chat-sidebar.open {
         transform: translateX(0);
     }
-    .navbar .container .md\:hidden { /* Garante que o botão de toggle da sidebar esteja visível */
+    .navbar .container .md\:hidden {
         display: block;
     }
     .chat-area {
-        padding: 0.5rem; /* Adiciona um pouco de padding na área de chat no mobile */
+        padding: 0.5rem;
     }
     .chat-container {
         padding: 0.5rem;
     }
 }
 
-/* Estilos para Mobile - Esconder sidebar e mostrar botão de toggle */
-@media (max-width: 767px) { /* Ajustado para ser menor que md (768px) */
+@media (max-width: 767px) {
     .chat-sidebar {
         position: absolute;
-        top: 3.5rem; 
+        top: 3.5rem;
         left: 0;
-        bottom: 0; 
-        width: 260px; /* Largura quando aberta no mobile */
-        transform: translateX(-100%); /* Estado inicial: escondida à esquerda */
-        z-index: 45; 
-        border-right-width: 1px; 
-        /* A transição já está definida na regra base .chat-sidebar */
-        .sidebar-header, .sidebar-actions, .sidebar-history, .sidebar-footer {
-            opacity: 1;
-            pointer-events: auto;
-        }
+        bottom: 0;
+        width: 260px;
+        transform: translateX(-100%);
+        z-index: 45;
+        border-right-width: 1px;
     }
-    .chat-sidebar.open { /* Classe para abrir no mobile */
-        transform: translateX(0); /* Estado final: visível */
+    .chat-sidebar.open {
+        transform: translateX(0);
     }
-
-    /* Esconde o botão de toggle do navbar se ele for específico para desktop e tivermos um diferente para mobile */
-    /* Se usar o mesmo botão, esta regra não é necessária ou precisa ser ajustada */
-    /* .navbar #sidebar-toggle-button { display: none; } */ /* Comentado pois usamos o mesmo botão */
 }
 
-/* Estilos para Desktop - Sidebar colapsável */
 @media (min-width: 768px) {
     main.sidebar-desktop-collapsed .chat-sidebar {
         width: 0;
@@ -299,10 +364,7 @@ main {
     main.sidebar-desktop-collapsed .chat-sidebar > * {
         overflow: hidden;
         white-space: nowrap;
-        opacity: 0; /* Para esconder o conteúdo também */
-        pointer-events: none; /* Para não ser interativo */
+        opacity: 0;
+        pointer-events: none;
     }
-}
-
-footer {
 }

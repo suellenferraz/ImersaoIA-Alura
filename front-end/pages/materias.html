@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matérias | GabirIA</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="../img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../img/favicon-16x16.png">
+    <link rel="manifest" href="../img/site.webmanifest">
+    <link rel="shortcut icon" href="../img/favicon.ico">
+    <meta name="msapplication-TileColor" content="#6366f1">
+    <meta name="theme-color" content="#111827">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body class="antialiased flex flex-col min-h-screen bg-gray-900 text-gray-200">
+
+    <nav class="navbar">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="../index.html" class="flex items-center text-2xl font-bold">
+                <img src="../img/logo.png" alt="GabirIA Logo" class="h-8 w-auto mr-2 flex-shrink-0">
+                <span class="gradient-text">GabirIA</span>
+            </a>
+            <div class="hidden md:flex space-x-6 items-center">
+                <a href="materias.html" class="nav-link text-indigo-400 font-semibold">Matérias</a>
+                <a href="simulados.html" class="nav-link">Simulados</a>
+                <a href="plano-estudos.html" class="nav-link">Planos de Estudo</a>
+                <a href="chatbot.html" class="nav-link-special">Usar Chatbot</a>
+            </div>
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-gray-300 hover:text-white focus:outline-none">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+        <div id="mobile-menu" class="md:hidden hidden">
+            <div class="mobile-menu-scroll-wrapper pt-4 pb-3 space-y-1">
+                <a href="materias.html" class="block py-2 px-4 text-base nav-link text-indigo-400 font-semibold">Matérias</a>
+                <a href="simulados.html" class="block py-2 px-4 text-base nav-link">Simulados</a>
+                <a href="plano-estudos.html" class="block py-2 px-4 text-base nav-link">Planos de Estudo</a>
+                <a href="chatbot.html" class="block mt-2 py-3 px-4 text-base font-semibold text-white text-center rounded-lg mx-2 cta-button-primary">Usar Chatbot</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="flex-grow container mx-auto px-4 sm:px-6 py-12 pt-24 md:pt-32">
+        <div class="text-center mb-12">
+            <h1 class="text-4xl md:text-5xl font-extrabold gradient-text mb-4">Explore Explicações de Matérias com GabirIA</h1>
+            <p class="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto">
+                Peça ao GabirIA para explicar qualquer tópico do ENEM e veja a mágica acontecer aqui!
+            </p>
+        </div>
+
+        <div class="bg-gray-800 p-6 sm:p-8 rounded-xl shadow-2xl">
+            <h2 class="text-2xl font-semibold text-white mb-6"><i class="fas fa-book-open mr-2 text-indigo-400"></i>Como obter explicações:</h2>
+            <ul class="list-none space-y-4 text-gray-300 mb-8">
+                <li class="flex items-start"><i class="fas fa-check-circle text-green-400 mr-3 mt-1"></i><span>Abra o <a href="chatbot.html" class="text-indigo-400 hover:text-indigo-300 font-semibold">Chatbot GabirIA</a>.</span></li>
+                <li class="flex items-start"><i class="fas fa-check-circle text-green-400 mr-3 mt-1"></i><span>Peça uma explicação, por exemplo: "Me explique o que é mitose" ou "Como funciona a Revolução Industrial?".</span></li>
+                <li class="flex items-start"><i class="fas fa-check-circle text-green-400 mr-3 mt-1"></i><span>O GabirIA gerará uma explicação detalhada e você será redirecionado para esta página.</span></li>
+            </ul>
+            <p class="text-gray-400 mb-6">
+                A explicação solicitada aparecerá abaixo. Se precisar de outro tópico, basta pedir novamente ao chatbot!
+            </p>
+            <div id="conteudo-explicacao" class="bg-gray-700 p-6 rounded-lg mt-8">
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-gray-800 py-8">
+        <div class="container mx-auto px-6 text-center text-gray-400">
+            <p>&copy; 2025 GabirIA - Todos os direitos reservados.</p>
+            <p class="text-sm mt-1">Criado para ajudar você a conquistar a sua vaga!</p>
+            <div class="mt-3 space-x-6">
+                <a href="https://www.linkedin.com/in/suellen-rayssa-barbosa-ferraz/" target="_blank" rel="noopener noreferrer" class="hover:text-indigo-400 text-lg" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="https://github.com/suellenferraz" target="_blank" rel="noopener noreferrer" class="hover:text-indigo-400 text-lg" aria-label="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../script.js" defer></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const containerExplicacao = document.getElementById('conteudo-explicacao');
+            const dadosSalvos = localStorage.getItem('gabarIA_explicacaoData');
+
+            if (containerExplicacao && dadosSalvos) {
+                try {
+                    const explicacaoData = JSON.parse(dadosSalvos);
+                    
+                    containerExplicacao.innerHTML = ''; 
+                    containerExplicacao.classList.remove('text-center');
+                    containerExplicacao.classList.add('text-left', 'space-y-6');
+
+                    if (explicacaoData.userQuery) {
+                        const queryContainer = document.createElement('div');
+                        queryContainer.className = 'mb-6 p-4 bg-gray-750 rounded-lg shadow'; 
+                        
+                        const queryIntro = document.createElement('p');
+                        queryIntro.className = 'text-sm text-indigo-300 font-medium mb-2'; 
+                        queryIntro.innerHTML = '<i class="fas fa-question-circle mr-2"></i>Você perguntou:';
+                        queryContainer.appendChild(queryIntro);
+
+                        const queryEl = document.createElement('blockquote');
+                        queryEl.className = 'text-gray-200 italic text-lg pl-4 border-l-4 border-indigo-500'; 
+                        queryEl.textContent = explicacaoData.userQuery; 
+                        queryContainer.appendChild(queryEl);
+                        
+                        containerExplicacao.appendChild(queryContainer);
+                    }
+
+                    if (explicacaoData.topico) {
+                        const tituloEl = document.createElement('h3');
+                        tituloEl.className = 'text-3xl font-bold text-white mb-4 pb-2 border-b border-gray-600';
+                        tituloEl.textContent = explicacaoData.topico;
+                        containerExplicacao.appendChild(tituloEl);
+                    }
+
+                    if (explicacaoData.explicacao) {
+                        const explicacaoEl = document.createElement('p');
+                        explicacaoEl.className = 'text-gray-300 mb-6';
+                        const paragrafos = explicacaoData.explicacao.split('\n');
+                        paragrafos.forEach(paragrafo => {
+                            const p = document.createElement('p');
+                            p.className = 'text-gray-300 mb-4';
+                            p.textContent = paragrafo;
+                            containerExplicacao.appendChild(p);
+                        });
+                    }
+
+                    if (explicacaoData.pontosChave && explicacaoData.pontosChave.length > 0) {
+                        const pontosChaveDiv = document.createElement('div');
+                        pontosChaveDiv.className = 'mt-4';
+                        const subtituloPontos = document.createElement('h4');
+                        subtituloPontos.className = 'text-xl font-semibold text-indigo-300 mb-2';
+                        subtituloPontos.textContent = 'Pontos Chave:';
+                        pontosChaveDiv.appendChild(subtituloPontos);
+
+                        const listaPontos = document.createElement('ul');
+                        listaPontos.className = 'list-disc list-inside space-y-1 text-gray-300 pl-4';
+                        explicacaoData.pontosChave.forEach(ponto => {
+                            const itemLista = document.createElement('li');
+                            if (ponto.includes('**')) {
+                                const partes = ponto.split('**');
+                                partes.forEach((parte, index) => {
+                                    if (parte !== "") {
+                                        if (index % 2 === 1) {
+                                            const strong = document.createElement('strong');
+                                            strong.textContent = parte;
+                                            itemLista.appendChild(strong);
+                                        } else {
+                                            itemLista.appendChild(document.createTextNode(parte));
+                                        }
+                                    }
+                                });
+                            } else {
+                                itemLista.textContent = ponto;
+                            }
+                            listaPontos.appendChild(itemLista);
+                        });
+                        pontosChaveDiv.appendChild(listaPontos);
+                        containerExplicacao.appendChild(pontosChaveDiv);
+                    }
+
+                    if (explicacaoData.dicasExtras && explicacaoData.dicasExtras.length > 0) {
+                        const dicasExtrasDiv = document.createElement('div');
+                        dicasExtrasDiv.className = 'mt-4';
+                        const subtituloDicas = document.createElement('h4');
+                        subtituloDicas.className = 'text-xl font-semibold text-indigo-300 mb-2';
+                        subtituloDicas.textContent = 'Dicas Extras:';
+                        dicasExtrasDiv.appendChild(subtituloDicas);
+
+                        const listaDicas = document.createElement('ul');
+                        listaDicas.className = 'list-disc list-inside space-y-1 text-gray-300 pl-4';
+                        explicacaoData.dicasExtras.forEach(dica => {
+                            const itemLista = document.createElement('li');
+                            itemLista.textContent = dica;
+                            listaDicas.appendChild(itemLista);
+                        });
+                        dicasExtrasDiv.appendChild(listaDicas);
+                        containerExplicacao.appendChild(dicasExtrasDiv);
+                    }
+
+                    if (explicacaoData.recursosAdicionais && explicacaoData.recursosAdicionais.length > 0) {
+                        const recursosDiv = document.createElement('div');
+                        recursosDiv.className = 'mt-4';
+                        const subtituloRecursos = document.createElement('h4');
+                        subtituloRecursos.className = 'text-xl font-semibold text-indigo-300 mb-2';
+                        subtituloRecursos.textContent = 'Recursos Adicionais:';
+                        recursosDiv.appendChild(subtituloRecursos);
+
+                        const listaRecursos = document.createElement('ul');
+                        listaRecursos.className = 'list-disc list-inside space-y-1 text-gray-300 pl-4';
+                        explicacaoData.recursosAdicionais.forEach(recurso => {
+                            const itemLista = document.createElement('li');
+                            const link = document.createElement('a');
+                            link.href = recurso.link;
+                            link.textContent = recurso.titulo;
+                            link.className = 'text-indigo-400 hover:text-indigo-500';
+                            itemLista.appendChild(link);
+                            listaRecursos.appendChild(itemLista);
+                        });
+                        recursosDiv.appendChild(listaRecursos);
+                        containerExplicacao.appendChild(recursosDiv);
+                    }
+
+                    if (explicacaoData.exemploPratico) {
+                        const exemploDiv = document.createElement('div');
+                        exemploDiv.className = 'mt-4 p-4 bg-gray-750 rounded-md';
+                        const subtituloExemplo = document.createElement('h4');
+                        subtituloExemplo.className = 'text-lg font-semibold text-green-400 mb-1';
+                        subtituloExemplo.innerHTML = '<i class="fas fa-lightbulb mr-2"></i>Exemplo Prático:';
+                        exemploDiv.appendChild(subtituloExemplo);
+                        
+                        const exemploEl = document.createElement('p');
+                        exemploEl.className = 'text-gray-300 italic';
+                        exemploEl.textContent = explicacaoData.exemploPratico;
+                        exemploDiv.appendChild(exemploEl);
+                        containerExplicacao.appendChild(exemploDiv);
+                    }
+
+                } catch (e) {
+                    console.error("Erro ao processar dados de explicação do localStorage:", e);
+                    containerExplicacao.innerHTML = '<p class="text-red-400 text-center">Ocorreu um erro ao tentar carregar a explicação. Por favor, tente gerar uma nova através do chatbot.</p>';
+                }
+            } else if (containerExplicacao) {
+                containerExplicacao.innerHTML = `
+                    <i class="fas fa-book-open text-5xl text-yellow-400 mb-4"></i>
+                    <h3 class="text-xl font-semibold text-white mb-3">A explicação aparecerá aqui!</h3>
+                    <p class="text-gray-300">Peça ao chatbot uma explicação sobre um tópico e ela será exibida aqui.</p>
+                `;
+                containerExplicacao.classList.remove('text-left', 'space-y-6');
+                containerExplicacao.classList.add('text-center');
+                console.log("Nenhum dado de explicação encontrado no localStorage para exibir.");
+            }
+        });
+    </script>
+</body>
+</html>

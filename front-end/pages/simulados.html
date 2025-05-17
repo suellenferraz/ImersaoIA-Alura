@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulados | GabirIA</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="../img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../img/favicon-16x16.png">
+    <link rel="manifest" href="../img/site.webmanifest">
+    <link rel="shortcut icon" href="../img/favicon.ico">
+    <meta name="msapplication-TileColor" content="#6366f1">
+    <meta name="theme-color" content="#111827">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body class="antialiased flex flex-col min-h-screen bg-gray-900 text-gray-200">
+
+    <nav class="navbar">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="../index.html" class="flex items-center text-2xl font-bold">
+                <img src="../img/logo.png" alt="GabirIA Logo" class="h-8 w-auto mr-2 flex-shrink-0">
+                <span class="gradient-text">GabirIA</span>
+            </a>
+            <div class="hidden md:flex space-x-6 items-center">
+                <a href="materias.html" class="nav-link">Matérias</a>
+                <a href="simulados.html" class="nav-link text-indigo-400 font-semibold">Simulados</a>
+                <a href="plano-estudos.html" class="nav-link">Planos de Estudo</a>
+                <a href="chatbot.html" class="nav-link-special">Usar Chatbot</a>
+            </div>
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-gray-300 hover:text-white focus:outline-none">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+        <div id="mobile-menu" class="md:hidden hidden">
+            <div class="mobile-menu-scroll-wrapper pt-4 pb-3 space-y-1">
+                <a href="materias.html" class="block py-2 px-4 text-base nav-link">Matérias</a>
+                <a href="simulados.html" class="block py-2 px-4 text-base nav-link text-indigo-400 font-semibold">Simulados</a>
+                <a href="plano-estudos.html" class="block py-2 px-4 text-base nav-link">Planos de Estudo</a>
+                <a href="chatbot.html" class="block mt-2 py-3 px-4 text-base font-semibold text-white text-center rounded-lg mx-2 cta-button-primary">Usar Chatbot</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="flex-grow container mx-auto px-4 sm:px-6 py-12 pt-24 md:pt-32">
+        <div class="text-center mb-12">
+            <h1 class="text-4xl md:text-5xl font-extrabold gradient-text mb-4">Desafie seus conhecimentos com os Simulados GabirIA</h1>
+            <p class="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto">
+                Prepare-se para o ENEM resolvendo questões de simulados gerados pela GabirIA!
+            </p>
+        </div>
+
+        <div class="bg-gray-800 p-6 sm:p-8 rounded-xl shadow-2xl">
+            <h2 class="text-2xl font-semibold text-white mb-6"><i class="fas fa-edit mr-2 text-indigo-400"></i>Como gerar um simulado:</h2>
+            <ul class="list-none space-y-4 text-gray-300 mb-8">
+                <li class="flex items-start"><i class="fas fa-check-circle text-green-400 mr-3 mt-1"></i><span>Abra o <a href="chatbot.html" class="text-indigo-400 hover:text-indigo-300 font-semibold">Chatbot GabirIA</a>.</span></li>
+                <li class="flex items-start"><i class="fas fa-check-circle text-green-400 mr-3 mt-1"></i><span>Peça um simulado, por exemplo: "Gere um simulado de matemática" ou "Crie um simulado sobre a primeira guerra mundial".</span></li>
+                <li class="flex items-start"><i class="fas fa-check-circle text-green-400 mr-3 mt-1"></i><span>O GabirIA gerará um simulado com questões e alternativas, e você será redirecionado para esta página.</span></li>
+            </ul>
+            <p class="text-gray-400 mb-6">
+                O simulado solicitado aparecerá abaixo. Responda às questões e teste seus conhecimentos!
+            </p>
+            <div id="conteudo-simulado" class="bg-gray-700 p-6 rounded-lg mt-8 text-center">
+                <i class="fas fa-tasks text-5xl text-yellow-400 mb-4"></i>
+                <h3 class="text-xl font-semibold text-white mb-3">Seu simulado aparecerá aqui!</h3>
+                <p class="text-gray-300">Após solicitar um simulado ao chatbot, as questões serão carregadas nesta seção.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-gray-800 py-8">
+        <div class="container mx-auto px-6 text-center text-gray-400">
+            <p>&copy; 2025 GabirIA - Todos os direitos reservados.</p>
+            <p class="text-sm mt-1">Criado para ajudar você a conquistar a sua vaga!</p>
+            <div class="mt-3 space-x-6">
+                <a href="https://www.linkedin.com/in/suellen-rayssa-barbosa-ferraz/" target="_blank" rel="noopener noreferrer" class="hover:text-indigo-400 text-lg" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="https://github.com/suellenferraz" target="_blank" rel="noopener noreferrer" class="hover:text-indigo-400 text-lg" aria-label="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../script.js" defer></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const containerSimulado = document.getElementById('conteudo-simulado');
+            const dadosSalvos = localStorage.getItem('gabarIA_simuladoData');
+
+            if (containerSimulado && dadosSalvos) {
+                try {
+                    const simuladoData = JSON.parse(dadosSalvos);
+                    
+                    containerSimulado.innerHTML = ''; 
+                    containerSimulado.classList.remove('text-center'); 
+                    containerSimulado.classList.add('text-left', 'space-y-6');
+
+                    if (simuladoData.titulo) {
+                        const headerDiv = document.createElement('div');
+                        headerDiv.className = 'flex items-center justify-between mb-8';
+
+                        const tituloEl = document.createElement('h3');
+                        tituloEl.className = 'text-3xl font-bold text-white';
+                        tituloEl.textContent = simuladoData.titulo;
+                        headerDiv.appendChild(tituloEl);
+
+                        const badgeSpan = document.createElement('span');
+                        badgeSpan.className = 'inline-flex items-center rounded-md bg-indigo-50 px-2 py-1 text-xs font-medium text-indigo-700 ring-1 ring-inset ring-indigo-700/10';
+                        badgeSpan.textContent = 'Simulado GabirIA';
+                        headerDiv.appendChild(badgeSpan);
+
+                        containerSimulado.appendChild(headerDiv);
+                    }
+
+                    const formEl = document.createElement('form');
+                    formEl.id = 'simulado-form';
+                    containerSimulado.appendChild(formEl);
+
+                    let numAcertos = 0;
+                    let numQuestoes = 0;
+
+                    console.log('simuladoData.perguntas:', simuladoData.perguntas);
+                    if (simuladoData.perguntas && simuladoData.perguntas.length > 0) {
+                        console.log('Exibindo as questões do simulado');
+                        simuladoData.perguntas.forEach((questao, index) => {
+                            numQuestoes++; 
+
+                            const questaoDiv = document.createElement('div');
+                            questaoDiv.className = `questao-${index} mb-8 p-6 bg-gray-800 rounded-lg shadow`; 
+
+                            const enunciadoEl = document.createElement('p');
+                            enunciadoEl.className = `enunciado text-lg text-gray-300 mb-4`; 
+                            enunciadoEl.innerHTML = `<span class="font-semibold">${index + 1}.</span> ${questao.enunciado}`;
+                            questaoDiv.appendChild(enunciadoEl);
+
+                            const alternativasUl = document.createElement('ul');
+                            alternativasUl.className = 'list-none space-y-2';
+
+                            for (const letra in questao.alternativas) {
+                                const alternativaLi = document.createElement('li');
+                                alternativaLi.className = 'flex items-center';
+
+                                const radioInput = document.createElement('input');
+                                radioInput.type = 'radio';
+                                radioInput.name = `questao-${index}`;
+                                radioInput.value = letra;
+                                radioInput.id = `questao-${index}-${letra}`;
+                                radioInput.className = 'mr-2 h-5 w-5 text-indigo-600 focus:ring-indigo-500 border-gray-700 rounded';
+
+                                const labelEl = document.createElement('label');
+                                labelEl.htmlFor = `questao-${index}-${letra}`;
+                                labelEl.className = 'text-gray-400';
+                                labelEl.textContent = `${letra}) ${questao.alternativas[letra]}`;
+
+                                alternativaLi.appendChild(radioInput);
+                                alternativaLi.appendChild(labelEl);
+                                alternativasUl.appendChild(alternativaLi);
+                            }
+
+                            questaoDiv.appendChild(alternativasUl);
+                            formEl.appendChild(questaoDiv); 
+                        });
+                    } else {
+                        console.log('Nenhuma pergunta encontrada ou perguntas.length === 0');
+                    }
+
+                    const submitButton = document.createElement('button');
+                    submitButton.type = 'submit';
+                    submitButton.textContent = 'Verificar Respostas';
+                    submitButton.className = 'cta-button-primary py-3 px-6 rounded-lg block mx-auto';
+                    formEl.appendChild(submitButton);
+
+                    const respostaDiv = document.createElement('div');
+                    respostaDiv.id = 'resposta-correta';
+                    respostaDiv.className = 'mt-4 text-green-500 font-semibold';
+                    containerSimulado.appendChild(respostaDiv);
+
+                    formEl.addEventListener('submit', function(event) {
+                        event.preventDefault(); 
+                        console.log('Formulário submetido!'); 
+
+                        const respostas = {};
+                        simuladoData.perguntas.forEach((questao, index) => {
+                            const selectedOption = document.querySelector(`input[name="questao-${index}"]:checked`);
+                            respostas[index] = selectedOption ? selectedOption.value : null;
+                            console.log(`Resposta selecionada para a questão ${index}:`, respostas[index]); 
+
+                            const questaoDiv = document.querySelector(`.questao-${index}`); 
+                            const enunciadoEl = questaoDiv.querySelector('.enunciado'); 
+
+                            const correta = respostas[index] === questao.respostaCorreta;
+                            const feedback = correta ? '<span class="text-green-500"> (Correta!)</span>' : '<span class="text-red-500"> (Incorreta!)</span>';
+                            enunciadoEl.innerHTML += feedback;
+
+                            if (correta) {
+                                numAcertos++;
+                            }
+                        });
+
+                        const porcentagemAcerto = (numAcertos / numQuestoes) * 100;
+                        console.log('Porcentagem de acerto:', porcentagemAcerto); 
+
+                        respostaDiv.textContent = `Você acertou ${porcentagemAcerto.toFixed(2)}% das questões.`;
+                    });
+
+                } catch (e) {
+                    console.error("Erro ao processar dados do simulado do localStorage:", e);
+                    containerSimulado.innerHTML = '<p class="text-red-400 text-center">Ocorreu um erro ao tentar carregar o simulado. Por favor, tente gerar um novo através do chatbot.</p>';
+                }
+            } else {
+                containerSimulado.innerHTML = `
+                    <i class="fas fa-tasks text-5xl text-yellow-400 mb-4"></i>
+                    <h3 class="text-xl font-semibold text-white mb-3">Seu simulado aparecerá aqui!</h3>
+                    <p class="text-gray-300">Após solicitar um simulado ao chatbot, as questões serão carregadas nesta seção.</p>
+                `;
+                containerSimulado.classList.remove('text-left', 'space-y-6');
+                containerSimulado.classList.add('text-center');
+            }
+        });
+    </script>
+</body>
+</html>

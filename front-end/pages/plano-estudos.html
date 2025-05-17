@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plano de Estudos | GabirIA</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="../img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../img/favicon-16x16.png">
+    <link rel="manifest" href="../img/site.webmanifest">
+    <link rel="shortcut icon" href="../img/favicon.ico">
+    <meta name="msapplication-TileColor" content="#6366f1">
+    <meta name="theme-color" content="#111827">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body class="antialiased flex flex-col min-h-screen bg-gray-900 text-gray-200">
+
+    <nav class="navbar">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="../index.html" class="flex items-center text-2xl font-bold">
+                <img src="../img/logo.png" alt="GabirIA Logo" class="h-8 w-auto mr-2 flex-shrink-0">
+                <span class="gradient-text">GabirIA</span>
+            </a>
+            <div class="hidden md:flex space-x-6 items-center">
+                <a href="materias.html" class="nav-link">Matérias</a>
+                <a href="simulados.html" class="nav-link">Simulados</a>
+                <a href="plano-estudos.html" class="nav-link text-indigo-400 font-semibold">Planos de Estudo</a>
+                <a href="chatbot.html" class="nav-link-special">Usar Chatbot</a>
+            </div>
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-gray-300 hover:text-white focus:outline-none">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+        <div id="mobile-menu" class="md:hidden hidden">
+            <div class="mobile-menu-scroll-wrapper pt-4 pb-3 space-y-1">
+                <a href="materias.html" class="block py-2 px-4 text-base nav-link">Matérias</a>
+                <a href="simulados.html" class="block py-2 px-4 text-base nav-link">Simulados</a>
+                <a href="plano-estudos.html" class="block py-2 px-4 text-base nav-link text-indigo-400 font-semibold">Planos de Estudo</a>
+                <a href="chatbot.html" class="block mt-2 py-3 px-4 text-base font-semibold text-white text-center rounded-lg mx-2 cta-button-primary">Usar Chatbot</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="flex-grow container mx-auto px-4 sm:px-6 py-12 pt-24 md:pt-32">
+        <div class="text-center mb-12">
+            <h1 class="text-4xl md:text-5xl font-extrabold gradient-text mb-4">Seu Plano de Estudos Personalizado com GabirIA</h1>
+            <p class="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto">
+                Deixe a inteligência do Gemini desenhar o caminho ideal para sua aprovação no ENEM!
+            </p>
+        </div>
+
+        <div class="bg-gray-800 p-6 sm:p-8 rounded-xl shadow-2xl">
+            <h2 class="text-2xl font-semibold text-white mb-6"><i class="fas fa-rocket mr-2 text-indigo-400"></i>Como o GabirIA vai montar seu plano:</h2>
+            <ul class="list-none space-y-4 text-gray-300 mb-8">
+                <li class="flex items-start"><i class="fas fa-check-circle text-green-400 mr-3 mt-1"></i><span>Análise inteligente do seu perfil, tempo disponível e matérias prioritárias.</span></li>
+                <li class="flex items-start"><i class="fas fa-check-circle text-green-400 mr-3 mt-1"></i><span>Criação de um cronograma semanal/mensal dinâmico e adaptável.</span></li>
+                <li class="flex items-start"><i class="fas fa-check-circle text-green-400 mr-3 mt-1"></i><span>Sugestões de revisões espaçadas e identificação de pontos de melhoria.</span></li>
+                <li class="flex items-start"><i class="fas fa-check-circle text-green-400 mr-3 mt-1"></i><span>Integração com simulados e resumos de matérias.</span></li>
+            </ul>
+            <p class="text-gray-400 mb-6">
+                Para começar, <a href="chatbot.html" class="text-indigo-400 hover:text-indigo-300 font-semibold">converse com o GabirIA</a> e diga: <strong class="text-gray-200">"Quero um plano de estudos para o ENEM."</strong>
+                Ele fará algumas perguntas para entender suas necessidades e, em instantes, seu plano estará aqui!
+            </p>
+            <div id="conteudo-plano" class="bg-gray-700 p-6 rounded-lg mt-8 text-center">
+                <i class="fas fa-lightbulb text-5xl text-yellow-400 mb-4"></i>
+                <h3 class="text-xl font-semibold text-white mb-3">Seu plano aparecerá aqui!</h3>
+                <p class="text-gray-300">Após a conversa com o chatbot, esta seção será preenchida com seu cronograma detalhado, metas e recursos.
+            </div>
+        </div>
+
+        <div id="plano-container" class="container mx-auto px-4 py-8"></div>
+    </main>
+
+    <footer class="bg-gray-800 py-8">
+        <div class="container mx-auto px-6 text-center text-gray-400">
+            <p>&copy; 2025 GabirIA - Todos os direitos reservados.</p>
+            <p class="text-sm mt-1">Criado para ajudar você a conquistar a sua vaga!</p>
+            <div class="mt-3 space-x-6">
+                <a href="https://www.linkedin.com/in/suellen-rayssa-barbosa-ferraz/" target="_blank" rel="noopener noreferrer" class="hover:text-indigo-400 text-lg" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="https://github.com/suellenferraz" target="_blank" rel="noopener noreferrer" class="hover:text-indigo-400 text-lg" aria-label="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../script.js" defer></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const containerPlano = document.getElementById('conteudo-plano');
+            const dadosSalvos = localStorage.getItem('studyPlanData');
+
+            if (containerPlano && dadosSalvos) {
+                try {
+                    const plano = JSON.parse(dadosSalvos);
+                    
+                    containerPlano.innerHTML = '';
+                    containerPlano.classList.remove('text-center');
+                    containerPlano.classList.add('text-left');
+
+                    const tituloEl = document.createElement('h3');
+                    tituloEl.className = 'text-3xl font-bold text-white mb-3';
+                    tituloEl.textContent = plano.titulo || 'Meu Plano de Estudos';
+                    containerPlano.appendChild(tituloEl);
+
+                    if (plano.introducao) {
+                        const introEl = document.createElement('p');
+                        introEl.className = 'text-gray-300 mb-6';
+                        introEl.textContent = plano.introducao;
+                        containerPlano.appendChild(introEl);
+                    }
+
+                    if (plano.semanas && plano.semanas.length > 0) {
+                        plano.semanas.forEach(semanaData => {
+                            const semanaDiv = document.createElement('div');
+                            semanaDiv.className = 'mb-8 p-4 bg-gray-750 rounded-lg shadow';
+
+                            const semanaTitulo = document.createElement('h4');
+                            semanaTitulo.className = 'text-xl font-semibold text-indigo-300 mb-1';
+                            semanaTitulo.textContent = `Semana ${semanaData.semana}: ${semanaData.foco}`;
+                            semanaDiv.appendChild(semanaTitulo);
+
+                            if (semanaData.dias && semanaData.dias.length > 0) {
+                                const diasList = document.createElement('ul');
+                                diasList.className = 'list-disc list-inside space-y-1 pl-2';
+                                semanaData.dias.forEach(diaData => {
+                                    const diaItem = document.createElement('li');
+                                    diaItem.className = 'text-gray-300';
+                                    diaItem.innerHTML = `<strong class="text-gray-100">${diaData.dia}:</strong> ${diaData.materias.join(', ')}`;
+                                    diasList.appendChild(diaItem);
+                                });
+                                semanaDiv.appendChild(diasList);
+                            }
+                            containerPlano.appendChild(semanaDiv);
+                        });
+                    }
+
+                    if (plano.dicasFinais) {
+                        const dicasEl = document.createElement('p');
+                        dicasEl.className = 'text-gray-400 mt-6 italic';
+                        dicasEl.textContent = plano.dicasFinais;
+                        containerPlano.appendChild(dicasEl);
+                    }
+
+                } catch (e) {
+                    console.error("Erro ao processar dados do plano do localStorage:", e);
+                    containerPlano.innerHTML = '<p class="text-red-400">Ocorreu um erro ao tentar carregar seu plano de estudos. Por favor, tente gerar um novo plano através do chatbot.</p>';
+                }
+            } else if (containerPlano) {
+                console.log("Nenhum dado de plano de estudos encontrado no localStorage para exibir.");
+            }
+        });
+    </script>
+</body>
+</html>

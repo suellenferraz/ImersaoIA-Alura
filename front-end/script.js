@@ -1,4 +1,3 @@
-// Script para o menu mobile
 const mobileMenuButton = document.getElementById('mobile-menu-button');
 const mobileMenu = document.getElementById('mobile-menu');
 
@@ -7,7 +6,6 @@ if (mobileMenuButton && mobileMenu) {
         mobileMenu.classList.toggle('hidden');
     });
 
-    // Fechar menu mobile ao clicar num link (opcional)
     document.querySelectorAll('#mobile-menu a').forEach(link => {
         link.addEventListener('click', () => {
             mobileMenu.classList.add('hidden');
@@ -15,12 +13,11 @@ if (mobileMenuButton && mobileMenu) {
     });
 }
 
-// Smooth scroll para âncoras
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
         const targetId = this.getAttribute('href');
-        if (targetId === '#') { // Evita erro se for apenas "#"
+        if (targetId === '#') {
             window.scrollTo({ top: 0, behavior: 'smooth' });
             return;
         }
@@ -33,21 +30,20 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Typewriter effect
 const typewriterTextElement = document.getElementById('typewriter-text');
 const textToType = "Com GabirIA, você Domina o ENEM";
 let charIndex = 0;
 let isDeleting = false;
-const typingSpeed = 100; // Milissegundos por caractere
-const deletingSpeed = 50; // Milissegundos para apagar
-const delayBeforeDelete = 2000; // Tempo antes de começar a apagar
+const typingSpeed = 100;
+const deletingSpeed = 50;
+const delayBeforeDelete = 2000;
 
 function typeWriter() {
-    if (!typewriterTextElement) return; // Garante que o elemento exista
+    if (!typewriterTextElement) return;
 
     const currentText = textToType.substring(0, charIndex);
     typewriterTextElement.textContent = currentText;
-    typewriterTextElement.classList.add('gradient-text'); // Manter o gradiente
+    typewriterTextElement.classList.add('gradient-text');
 
     if (!isDeleting && charIndex < textToType.length) {
         charIndex++;
@@ -60,34 +56,32 @@ function typeWriter() {
         setTimeout(typeWriter, delayBeforeDelete);
     } else if (isDeleting && charIndex === 0) {
         isDeleting = false;
-        setTimeout(typeWriter, typingSpeed); // Reinicia a digitação
+        setTimeout(typeWriter, typingSpeed);
     }
 }
 
 document.addEventListener('DOMContentLoaded', function() {
     if (typewriterTextElement) {
-        setTimeout(typeWriter, 500); // Pequeno atraso para iniciar
+        setTimeout(typeWriter, 500);
     }
 
-    // Scroll reveal animation
     const animatedScrollElements = document.querySelectorAll('.scroll-animated-item');
     if ("IntersectionObserver" in window) {
         const observer = new IntersectionObserver((entries, observerInstance) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('fade-in-up');
-                    observerInstance.unobserve(entry.target); // Anima apenas uma vez
+                    observerInstance.unobserve(entry.target);
                 }
             });
         }, { 
-            threshold: 0.1 // Aciona quando 10% do item está visível (ajuste conforme necessário)
+            threshold: 0.1
         });
 
         animatedScrollElements.forEach(el => {
             observer.observe(el);
         });
     } else {
-        // Fallback para navegadores sem IntersectionObserver: apenas torna os elementos visíveis
         animatedScrollElements.forEach(el => {
             el.style.opacity = 1;
         });
