@@ -4,15 +4,15 @@
   <p>Sua aliada na jornada rumo ao ENEM, turbinada por Inteligência Artificial!</p>
 </div>
 
-## Imersão em Inteligência Artificial com Alura e Google
+## 🤖 Imersão em Inteligência Artificial com Alura e Google
 
 Este projeto foi desenvolvido durante a Imersão em Inteligência Artificial, uma parceria entre a [Alura](https://www.alura.com.br/?srsltid=AfmBOoo2UvrLGzvpdVa_-qslA6wY5aW2jtnetogRhhq8GoVpgVJyupb1) e o Google, utilizando a API Gemini para criar soluções inovadoras.
 
-## Por que GabirIA?
+## 🔩 Por que GabirIA?
 
 A GabirIA nasceu da crença de que a educação é um poderoso agente de transformação social. Reconhecendo as barreiras que muitos estudantes enfrentam ao se prepararem para o ENEM, especialmente aqueles com recursos limitados, a GabirIA se propõe a democratizar o acesso a ferramentas de estudo de alta qualidade. Utilizando a tecnologia da API Gemini, a GabirIA oferece uma plataforma acessível e eficiente, permitindo que todos os estudantes tenham a oportunidade de alcançar seus objetivos acadêmicos.
 
-## Sobre o GabirIA
+## ✨ Sobre o GabirIA
 
 O GabirIA é um assistente de estudos inteligente projetado para auxiliar estudantes na preparação para o Exame Nacional do Ensino Médio (ENEM). Com o GabirIA, você pode:
 
@@ -20,7 +20,7 @@ O GabirIA é um assistente de estudos inteligente projetado para auxiliar estuda
 *   **Gerar simulados personalizados** para testar seus conhecimentos e identificar áreas de melhoria.
 *   **Criar planos de estudo adaptados** às suas necessidades, tempo disponível e ritmo de aprendizado.
 
-## Como Utilizar
+## 🛠️ Como Utilizar
 
 1.  **Obtenha sua chave da API Gemini:**
 
@@ -48,10 +48,10 @@ O GabirIA é um assistente de estudos inteligente projetado para auxiliar estuda
 
     *   Abra o arquivo `front-end/index.html` no seu navegador.
 
-## Contribuições
+## 🤝🏻 Contribuições
 
 Contribuições são sempre bem-vindas! Sinta-se à vontade para abrir issues e enviar pull requests.
 
-## Licença
+## ✅ Licença
 
 Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE.md) para mais detalhes.
